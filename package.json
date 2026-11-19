@@ -1,0 +1,10 @@
+{
+  "name": "gomoku-online",
+  "version": "0.1.0",
+  "private": true,
+  "description": "五子棋联机验证：房间 + 统一密码 + 服务器裁判",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "ws": "^8.18.0" }
+}

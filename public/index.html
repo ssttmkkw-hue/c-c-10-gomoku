@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>五子棋联机</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- 大厅 -->
+<section id="lobby" class="card">
+  <h1>五子棋 · 联机</h1>
+  <p class="sub">两人输入同一个房间号即可对战，第三人进入为观战</p>
+  <label>昵称<input id="inName" maxlength="12" placeholder="随便起个名字"></label>
+  <label>房间号<input id="inRoom" maxlength="16" placeholder="例如 8888"></label>
+  <label>密码<input id="inPwd" type="password" maxlength="16" placeholder="统一密码"></label>
+  <div class="row">
+    <button id="btnJoin" class="primary">进入房间</button>
+    <button id="btnRandom">随机房间号</button>
+  </div>
+  <p id="lobbyErr" class="err"></p>
+  <div id="roomList"></div>
+</section>
+
+<!-- 对局 -->
+<section id="game" hidden>
+  <header class="bar">
+    <div><b>房间 <span id="roomId"></span></b> <button id="btnCopy" class="mini">复制邀请链接</button></div>
+    <div><span id="net" class="net">连接中…</span> <button id="btnLeave" class="mini">离开</button></div>
+  </header>
+  <div class="layout">
+    <div class="boardWrap"><canvas id="board"></canvas></div>
+    <aside>
+      <div class="players">
+        <div id="pBlack" class="player"><i class="stone b"></i><span class="pname">等待加入…</span><em></em></div>
+        <div id="pWhite" class="player"><i class="stone w"></i><span class="pname">等待加入…</span><em></em></div>
+      </div>
+      <div id="status" class="status"></div>
+      <button id="btnRestart" class="primary" hidden>再来一局</button>
+      <div id="spect" class="spect"></div>
+      <div class="chat">
+        <div id="chatLog"></div>
+        <form id="chatForm"><input id="chatIn" maxlength="120" placeholder="说点什么…"><button>发送</button></form>
+      </div>
+    </aside>
+  </div>
+</section>
+<div id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
