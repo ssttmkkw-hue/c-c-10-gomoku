@@ -1,0 +1,16 @@
+# Render 蓝图：在 Render 里选 New → Blueprint，指向本仓库即可自动创建
+services:
+  - type: web
+    name: c-c-10-gomoku
+    runtime: node
+    plan: free            # 免费档：15 分钟没人访问会休眠，再次打开约 30–60 秒唤醒
+    region: singapore     # 离国内最近的 Render 机房
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true      # 推送到 GitHub main 后自动重新部署
+    envVars:
+      - key: ROOM_PASSWORD
+        value: "123"
+      - key: NODE_VERSION
+        value: "22"

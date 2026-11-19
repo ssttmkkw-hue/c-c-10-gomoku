@@ -20,7 +20,21 @@ node server.js          # 默认端口 5218，密码 123
 - 断线自动重连，座位保留 2 分钟；刷新页面会回到原座位
 - 再来一局需双方同意，自动交换黑白；房间内聊天；延迟显示
 
-## 让外地朋友一起玩（公网）
+## 部署到 Render（免费）
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/ssttmkkw-hue/c-c-10-gomoku)
+
+1. 登录 Render（用 GitHub 账号登录最省事）
+2. 点上面的按钮，或在 Render 里选 **New → Blueprint**，选仓库 `c-c-10-gomoku`
+3. 它会读取仓库里的 `render.yaml`，直接点 **Apply / Deploy**，等 2–3 分钟
+4. 得到网址 `https://c-c-10-gomoku-xxxx.onrender.com`，发给朋友，密码 123
+
+免费版须知：
+- 15 分钟没人访问会休眠，下次打开要等 30–60 秒（页面会一直转圈，等就行）
+- 休眠/重新部署会清空所有房间（房间本来就只存在内存里，不影响使用）
+- 以后改代码推到 GitHub `main`，Render 会自动重新部署
+
+## 其他公网方案
 | 方案 | 费用 | 适合 |
 |---|---|---|
 | Cloudflare 临时隧道：`cloudflared tunnel --url http://localhost:5218` | 免费，无需账号 | 马上测，你电脑开着就能玩，网址每次变 |
